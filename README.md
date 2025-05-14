@@ -1,4 +1,4 @@
-### Portfolio Website
+# Portfolio Website
 ## Languages: HTML, CSS, and JavaScript
 ### Code Editor: VSCode
 
