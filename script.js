@@ -1,3 +1,22 @@
+window.addEventListener("load", () => {
+  if (!sessionStorage.getItem("loaderShown")) {
+    const loader = document.querySelector(".preloader");
+
+    loader.classList.add("preloader--hidden");
+
+    loader.addEventListener("transitionend", () => {
+      document.body.removeChild(loader);
+    });
+
+    sessionStorage.setItem("loaderShown", "true");
+  } else {
+    const loader = document.querySelector(".preloader");
+    if (loader) {
+      document.body.removeChild(loader);
+    }
+  }
+});
+
 var sidemenu = document.getElementById("sidemenu");
 
 function openmenu() {
@@ -287,40 +306,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const form = document.getElementById("form");
-const successMessage = document.getElementById("successM");
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbxQ8BttrPMrMjpscGWob-CHQFRAHkgLS6RVkdRt0qipiVuQBSlsVImiBPgXp8a2z9wE/exec";
+const form = document.forms["form"];
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  const formData = {
-    name: form.elements["Name"].value,
-    email: form.elements["Email"].value,
-    message: form.elements["Message"].value,
-  };
-
-  fetch(
-    "https://script.google.com/macros/s/AKfycbwaNdFrfoUP2OhEouvbD5qNjQWGBT-F9lWx8rksKk_-u6VlEOlM6tmFncnrPc7QkrnnxQ/exec",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value,
-      }),
-      headers: { "Content-Type": "application/json" },
-    }
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Response from script:", data);
-      if (data.result === "success") {
-        form.reset();
-        successMessage.style.display = "block";
-      }
-    })
-    .catch((err) => {
-      alert("Error! Please try again.");
-      console.error(err);
-    });
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => alert("Success! We will be in touch soon!", response))
+    .catch((error) =>
+      alert(
+        "I am sorry! Something is wrong.<br>Please, click the <em>Contact Me</em> button!",
+        error.message
+      )
+    );
 });

@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" href="icons/sqrLotusLogoWhtIcon.png" />
   </head>
   <body>
+    <!-- PRELOADER -->
     <div class="preloader">
       <p>Welcome</p>
     </div>
@@ -56,6 +57,7 @@
       </div>
     </header>
     <main>
+      <!-- TOP TAG -->
       <div class="goin-up">
         <a href="#top"><img src="icons/lotusLogoBlkicon.png" alt="Lotus" /></a>
       </div>
@@ -519,28 +521,26 @@
                   Contact Me
                 </a>
               </div>
-              <form id="form" method="post">
+              <!-- CONTACT FORM -->
+              <form name="form" method="post">
                 <input
                   type="text"
-                  name="Name"
+                  name="name"
                   placeholder="Your Name"
                   required
                 />
                 <input
                   type="email"
-                  name="Email"
+                  name="email"
                   placeholder="Your Email"
                   required
                 />
                 <textarea
-                  name="Message"
+                  name="message"
                   rows="6"
                   placeholder="Your Message"
                 ></textarea>
                 <button type="submit" class="button">Send</button>
-                <p id="successM" class="successM">
-                  Success! We will be in touch really soon!
-                </p>
               </form>
             </div>
 
@@ -559,7 +559,6 @@
         <p>by Hywandra&trade;</p>
       </div>
     </footer>
-    <script src="loaderScript.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

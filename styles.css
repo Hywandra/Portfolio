@@ -29,12 +29,13 @@ html {
   z-index: 100;
   animation: loading 7s normal;
   p {
-    color: #e6e6e6;
+    color: rgba(230, 230, 230, 0.9);
     position: fixed;
     font-size: 10vw;
     top: 50%;
     left: 5%;
     text-align: left;
+    text-shadow: rgba(230, 230, 230, 0.7) 0 0 40px;
   }
 }
 @keyframes loading {
@@ -136,7 +137,7 @@ nav {
   right: 0;
   background: #ffda33;
   border-radius: 10px 0 0 10px;
-  z-index: 100;
+  z-index: 50;
   width: 5vw;
   height: auto;
   box-shadow: #000000 0px 0px 5px;
