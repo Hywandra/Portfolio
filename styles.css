@@ -556,10 +556,6 @@ article {
     filter: drop-shadow(hsl(41, 100%, 25%) 0px 0px 5px);
   }
 }
-.successM {
-  display: none;
-  color: green;
-}
 /* --- END 1st LETs TALK --- */
 
 /* --- FOOTER --- */

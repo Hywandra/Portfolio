@@ -307,7 +307,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const form = document.getElementById("form");
-const successMessage = document.getElementById("successM");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -321,8 +320,9 @@ form.addEventListener("submit", async (e) => {
     });
 
     if (response.ok) {
-      form.reset();
-      successMessage.style.display = "block";
+      fform
+        .querySelectorAll("input, textarea")
+        .forEach((el) => (el.value = ""));
     } else {
       alert("Something went wrong. Please try again.");
     }
