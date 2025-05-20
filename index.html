@@ -6,9 +6,9 @@
     <title>Ivandra Santos - Portfolio</title>
 
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script src="loaderScript.js"></script>
 
-    <link rel="icon" type="image/png" href="icons/lotusLogoWhticon.png" />
+    <link rel="icon" type="image/png" href="icons/sqrLotusLogoWhtIcon.png" />
   </head>
   <body>
     <!-- <div class="preloader">
@@ -19,15 +19,29 @@
       <div id="intro">
         <div class="container">
           <nav>
-            <img src="icons/lotusLogoWhticon.png" alt="Logo" class="logo" />
-            <ul>
+            <a href="#intro"
+              ><img src="icons/sqrLotusLogoWhtIcon.png" alt="Logo" class="logo"
+            /></a>
+            <ul id="sidemenu">
               <li><a href="#intro">Intro</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#tools">Tools</a></li>
               <li><a href="#projects">Projects</a></li>
-              <li><a href="#efa56">EFA56</a></li>
+              <li><a href="EFA56.html">EFA56</a></li>
               <li><a href="#letstalk" class="button">Let's Talk</a></li>
+              <img
+                src="icons/cross.png"
+                alt="Close"
+                class="close icon"
+                onclick="closemenu()"
+              />
             </ul>
+            <img
+              src="icons/menuIcon.png"
+              alt="Menu"
+              class="menu icon"
+              onclick="openmenu()"
+            />
           </nav>
           <div class="intro-text">
             <h2>Ivandra Santos</h2>
@@ -44,19 +58,18 @@
     </header>
     <main>
       <div class="goin-up">
-        <a href="#intro"
-          ><img src="icons/lotusLogoBlkicon.png" alt="Lotus"
-        /></a>
+        <a href="#top"><img src="icons/lotusLogoBlkicon.png" alt="Lotus" /></a>
       </div>
       <!-- -------------- ABOUT ME ---------------- -->
 
       <section id="about" class="about">
         <div class="about-pict">
+          <h1 class="subTitle on-media">I am</h1>
           <img src="media/aboutMe.jpeg" alt="Ivandra Santos" width="100%" />
         </div>
         <div class="about-text">
           <div>
-            <h1 class="subTitle">I am</h1>
+            <h1 class="subTitle not-media">I am</h1>
             <p>
               a Full-Stack Developer trainee with a passion for creating dynamic
               and user-friendly web sites. I have been studying in both
@@ -76,7 +89,6 @@
               my family and friends.
             </p>
             <div class="call-to-action">
-              <a href="#letstalk" class="button-black"> View Resume </a>
               <a href="#letstalk" class="button"> Let's Talk </a>
             </div>
           </div>
@@ -124,13 +136,7 @@
         </div>
 
         <div class="logos title">
-          <div
-            style="
-              border-radius: 100px;
-              background-color: rgba(230, 230, 230, 0.02);
-              margin: 0 40vw;
-            "
-          >
+          <div class="stack">
             <p style="padding-top: 1vh">work with these</p>
             <h2 class="overline tools-sub-title">Stack</h2>
           </div>
@@ -329,18 +335,8 @@
                     </div>
                   </article>
                 </div>
-                <h2
-                  class="overline gear-info"
-                  style="
-                    padding: 7vh 0 3vh 0;
-                    text-decoration-color: hsl(0, 0%, 60%);
-                    text-decoration-thickness: 1px;
-                    justify-content: center;
-                  "
-                >
-                  Peripherals
-                </h2>
-                <div class="gear-info" style="gap: 5vh">
+                <h2 class="overline gear-info peripheral">Peripherals</h2>
+                <div class="gear-info periph-gap">
                   <article class="article-padding">
                     <div>
                       <p><big>Horizontal Monitor</big></p>
@@ -500,6 +496,9 @@
         >
           I am ready to face new challenges
         </p>
+        <div class="on-media">
+          <img src="media/diveIn1.png" alt="Me Diving In" width="100%" />
+        </div>
         <div class="contact">
           <div class="contact-container">
             <div class="contact-left">
@@ -521,7 +520,7 @@
                   Contact Me
                 </a>
               </div>
-              <form>
+              <form id="form" method="post">
                 <input
                   type="text"
                   name="Name"
@@ -540,11 +539,14 @@
                   placeholder="Your Message"
                 ></textarea>
                 <button type="submit" class="button">Send</button>
+                <p id="successM" class="successM">
+                  Success! We will be in touch really soon!
+                </p>
               </form>
             </div>
 
             <div class="contact-right">
-              <div class="padding-this">
+              <div class="padding-this not-media">
                 <img src="media/diveIn1.png" alt="Me Diving In" width="100%" />
               </div>
             </div>
@@ -558,5 +560,6 @@
         <p>by Hywandra&trade;</p>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
