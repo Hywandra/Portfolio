@@ -26,17 +26,6 @@ function closemenu() {
   sidemenu.style.right = "-190px";
 }
 
-window.addEventListener("load", () => {
-  for (let i of document.querySelectorAll(".collapsible ul")) {
-    let t = document.createElement("div");
-    t.innerHTML = i.previousSibling.textContent;
-    t.className = "toggle";
-    t.onclick = () => t.classList.toggle("open");
-    i.parentElement.removeChild(i.previousSibling);
-    i.parentElement.insertBefore(t, i);
-  }
-});
-
 // Subjects with both display name and link code
 const groupedModules = [
   {
@@ -213,7 +202,7 @@ const groupedModules = [
         link: "https://catalogo.anqep.gov.pt/ufcdDetalhe/17535",
       },
     ],
-  } /* 
+  } /* THIS DOT NOT WORKS
   {
     domain: "Professional Development and Soft Skills",
     subjects: [
@@ -258,6 +247,7 @@ groupedModules.forEach((group) => {
   subjectList.appendChild(groupDiv);
 });
 
+// making this group aligned with the rest
 const softSkillsGroup = document.createElement("div");
 softSkillsGroup.className = "subject-group";
 softSkillsGroup.innerHTML = `
@@ -306,6 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Contact form sendig data to formspree
 const form = document.getElementById("form");
 
 form.addEventListener("submit", async (e) => {
@@ -320,9 +311,7 @@ form.addEventListener("submit", async (e) => {
     });
 
     if (response.ok) {
-      fform
-        .querySelectorAll("input, textarea")
-        .forEach((el) => (el.value = ""));
+      form.querySelectorAll("input, textarea").forEach((el) => (el.value = ""));
     } else {
       alert("Something went wrong. Please try again.");
     }
