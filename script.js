@@ -306,18 +306,28 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbxQ8BttrPMrMjpscGWob-CHQFRAHkgLS6RVkdRt0qipiVuQBSlsVImiBPgXp8a2z9wE/exec";
-const form = document.forms["form"];
+const form = document.getElementById("form");
+const successMessage = document.getElementById("successM");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => alert("Success! We will be in touch soon!", response))
-    .catch((error) =>
-      alert(
-        "I am sorry! Something is wrong.<br>Please, click the <em>Contact Me</em> button!",
-        error.message
-      )
-    );
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
+
+    if (response.ok) {
+      form.reset();
+      successMessage.style.display = "block";
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    alert("Error sending message. Please try again later.");
+    console.error(error);
+  }
 });
