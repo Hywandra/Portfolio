@@ -22,12 +22,20 @@ html {
 /* --- PRELOADER --- */
 .preloader {
   background: black url(media/loadergif.gif) no-repeat center right;
-  background-size: 40%;
+  background-size: 50%;
   position: fixed;
   width: 100vw;
   height: 100vh;
   z-index: 100;
   animation: loading 7s normal;
+  p {
+    color: #e6e6e6;
+    position: fixed;
+    font-size: 10vw;
+    top: 50%;
+    left: 5%;
+    text-align: left;
+  }
 }
 @keyframes loading {
   0% {
@@ -46,14 +54,6 @@ html {
 .preloader--hidden {
   opacity: 0;
   visibility: hidden;
-}
-.preloader p {
-  color: #e6e6e6;
-  position: fixed;
-  font-size: 200px;
-  top: 35%;
-  left: 5%;
-  text-align: left;
 }
 /* --- END PRELOADER --- */
 
