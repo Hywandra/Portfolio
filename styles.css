@@ -430,25 +430,25 @@ article {
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-gap: 10vw;
   margin-top: 30px;
-  border-radius: 150px;
+  border-radius: 100px;
 }
 .works {
-  border-radius: 150px;
+  border-radius: 100px;
   position: relative;
   overflow: hidden;
   &:hover img {
     transform: scale(1.2);
     transform: opacity(0.6);
-    border-radius: 150px;
+    border-radius: 100px;
   }
   &:hover .layer {
     height: 100%;
-    border-radius: 150px;
+    border-radius: 100px;
   }
 }
 .works img {
   width: 100%;
-  border-radius: 150px;
+  border-radius: 100px;
   display: block;
   transition: transform 0.5s;
   border: #e6e6e6 solid 2px;
@@ -457,7 +457,7 @@ article {
   width: 100%;
   height: 0;
   background: linear-gradient(rgb(204, 139, 0), rgba(0, 0, 0, 0.4));
-  border-radius: 150px;
+  border-radius: 100px;
   position: absolute;
   top: 0;
   left: 0;
