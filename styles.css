@@ -434,6 +434,7 @@ article {
 }
 .works {
   border-radius: 100px;
+  border: #e6e6e6 solid 2px;
   position: relative;
   overflow: hidden;
   &:hover img {
@@ -451,7 +452,6 @@ article {
   border-radius: 100px;
   display: block;
   transition: transform 0.5s;
-  border: #e6e6e6 solid 2px;
 }
 .layer {
   width: 100%;
@@ -812,7 +812,7 @@ video {
     margin: 0;
   }
   .works {
-    padding-bottom: 5vh;
+    margin-bottom: 5vh;
   }
   .layer {
     padding: 0;
@@ -828,6 +828,71 @@ video {
       margin-top: 0;
     }
   }
+  /*   .work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 10vw;
+    margin-top: 30px;
+    border-radius: 100px;
+  }
+  .works {
+    border-radius: 100px;
+    border: #e6e6e6 solid 2px;
+    position: relative;
+    overflow: hidden;
+    &:hover img {
+      transform: scale(1.2);
+      transform: opacity(0.6);
+      border-radius: 100px;
+    }
+    &:hover .layer {
+      height: 100%;
+      border-radius: 100px;
+    }
+  }
+  .works img {
+    width: 100%;
+    border-radius: 100px;
+    display: block;
+    transition: transform 0.5s;
+  }
+  .layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgb(204, 139, 0), rgba(0, 0, 0, 0.4));
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+  
+    h3 {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    p {
+      text-shadow: #000000 0 0 2px;
+    }
+    a {
+      background: rgb(0, 0, 0);
+      color: #ffda33;
+      font-weight: bold;
+      padding: 0 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      border: #ffda33 1px solid;
+      margin-top: 20px;
+    }
+  } */
+
   #letstalk {
     padding: 5vh 10vw 5vh 10vw;
     .on-media {
@@ -912,6 +977,7 @@ video {
   .course-goals {
     p {
       font-size: smaller;
+      padding: 0 2vw;
     }
   }
   .columns-wrapper {
@@ -919,7 +985,7 @@ video {
     flex-wrap: wrap;
     gap: 5vh 1vw;
     justify-content: space-around;
-    padding: 2vh 1vw;
+    padding: 2vh 2vw;
   }
   .group-title {
     font-weight: bold;
